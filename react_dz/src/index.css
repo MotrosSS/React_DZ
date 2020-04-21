@@ -1,15 +1,3 @@
-#info{
-  margin-left: 20px;  
-}
-
-#aboutMe{
-  font-weight:bold;
-}
-
-#village li{
-  color: cornflowerblue;
-}
-
-#name{
-  color: firebrick;
+body{
+  margin: 0;
 }
