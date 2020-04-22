@@ -1,6 +1,9 @@
 header {
     text-align: center;
-    background: #9ed3c8;
+    background: rgb(67, 162, 194);
     color: white;
     font-size: 30px;
+    padding: 25px;    
+    font-style: oblique;
+    font-family: cursive;
 }
