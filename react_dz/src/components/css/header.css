@@ -1,8 +1,6 @@
-header {
+.header {
     text-align: center;
-    background: rgb(67, 162, 194);
-    color: white;
-    font-size: 30px;
+    font-size: 50px;
     padding: 25px;    
     font-style: oblique;
     font-family: cursive;

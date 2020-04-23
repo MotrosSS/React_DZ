@@ -5,8 +5,8 @@ import "./css/header.css";
 
 function Heder(){
     return(
-        <header>
-            ПЕТРОСЯН РЕКОМЕНДУЕТ
+        <header className="header">
+            TO-DO LIST
         </header>
     );
 }

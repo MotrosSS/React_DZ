@@ -1,21 +1,13 @@
 import React from "react";
 import Heder from "./Heder";
-import Joke from './Joke';
+import Main from "./Main"
 
 function App() {
     return (
-        <div>
+        <React.StrictMode>
             <Heder />
-
-            <div className="jokes">
-                <Joke jokeNumber="1" />
-                <Joke jokeNumber="4" />
-                <Joke jokeNumber="33" />
-                <Joke jokeNumber="3" />
-                <Joke jokeNumber="2" />
-                <Joke jokeNumber="5" />
-            </div>
-        </div>
+            <Main />
+        </React.StrictMode>
     );
 }
 
