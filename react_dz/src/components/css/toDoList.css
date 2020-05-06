@@ -30,6 +30,7 @@
 
 input:checked + .text {
     color: #5e5edd;
+    text-decoration: line-through;
 }
 
 

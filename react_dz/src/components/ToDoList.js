@@ -1,24 +1,36 @@
-import React from 'react'
-import './css/toDoList.css'
+import React from 'react';
+import { DATALIST } from '../dataList';
+import TodoItem from './TodoItem';
 
 
+class TodoList extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            todos: DATALIST
+        }
+        this.changeStatus = this.changeStatus.bind(this);
+    }
 
 
-function TodoItem(props) {
+    changeStatus(id) {
+        let selItem = this.state.todos.find(item => item.id === id);
+        selItem.completed = !selItem.completed;
+        this.setState({
+            todos: this.state.todos
+        });
+    }
 
-    return (
-        <div className="task">
-            <label>
-                <input className="checkbox"
-                    type="checkBox" defaultChecked={props.info.completed === true ? true : false}/>
-
-                <span className="text">
-                    {props.info.text}
-                </span>
-            </label>
-        </div>
-    );
+    render() {
+        const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} changeStatus={this.changeStatus} />);
+        return (
+            <div id="mainList" >
+                {todoItems}
+            </div>
+        );
+    }
 }
 
+export default TodoList;
 
-export default TodoItem; 

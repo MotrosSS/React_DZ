@@ -1,17 +1,14 @@
 import React from 'react';
-import { DATALIST } from '../dataList';
-import ToDoList from './ToDoList';
-
+import TodoList from './TodoList';
+import Authorization from './Authorization'
 
 function Main() {
-
-    const dataList = DATALIST.map(data => <ToDoList key={data.id} info={data} />);
-
     return (
-        <div id="mainList">
-            {dataList}
+        <div>
+            <Authorization />
+            <TodoList />
         </div>
-    );
+    )
 }
 
 export default Main;
