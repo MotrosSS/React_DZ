@@ -15,28 +15,25 @@ class App extends Component {
     }
 
     handleChange(event) {
-        const { name, value, type, checked } = event.target;
-        if (type === 'checkbox') {
-            if (checked) {
-                this.setState(prevState => ({
-                    diet: [...prevState.diet, value,". "]
-                }))
-            }
-            else {
-                const newDied = [...this.state.diet];
-                const index = newDied.indexOf(value)
-                newDied.splice(index, 2);
-                this.setState({
-                    diet: newDied
-                });
 
-            }
-        } else {
+        const { name, value, type, checked } = event.target;
+        if (type === 'checkbox' && checked) {
+            this.setState(prevState => ({
+                diet: [...prevState.diet, value, ". "]
+            }))
+        } else if (type === 'checkbox' && !checked) {
+            const newDied = [...this.state.diet];
+            const index = newDied.indexOf(value)
+            newDied.splice(index, 2);
+            this.setState({
+                diet: newDied
+            });
+        }
+        else {
             this.setState({
                 [name]: value
             })
         }
-
     }
 
     render() {
