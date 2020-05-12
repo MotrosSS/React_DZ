@@ -1,0 +1,26 @@
+.active{
+    color:#262424;
+}
+
+.list{    
+    display: block;
+    text-align: center;
+    font-size: x-large;
+    padding: 0;
+    margin: 10px;
+}
+
+.menu{
+    background-color: #efeded;
+    padding: 10px;
+}
+
+.menu li{
+    display: inline;
+    margin: 10px;
+}
+
+.menu a:hover{
+    color:#262424;
+    text-decoration: none;
+}
