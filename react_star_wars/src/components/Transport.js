@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from './Loading';
 
 class Transport extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class Transport extends React.Component {
     render() {
         return (
             <ul style={{ padding: 0 }}>
-                {this.state.transports.map(transport => <li className='list'>{transport.name}</li>)}
+                {
+                    this.state.isLoading ? <Loading /> : this.state.transports.map(transport => <li className='list'>{transport.name}</li>)
+                }
             </ul>
         )
     }

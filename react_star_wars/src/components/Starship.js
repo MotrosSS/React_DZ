@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from './Loading';
 
 class Starship extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class Starship extends React.Component {
     render() {
         return (
             <ul style={{ padding: 0 }}>
-                {this.state.starships.map(starship => <li className='list'>{starship.name}</li>)}
+                {
+                    this.state.isLoading ? <Loading /> : this.state.starships.map(starship => <li className='list'>{starship.name}</li>)
+                }
             </ul>
         )
     }

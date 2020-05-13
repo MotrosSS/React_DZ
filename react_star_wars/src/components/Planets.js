@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from './Loading';
 
 class Planets extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class Planets extends React.Component {
     render() {
         return (
             <ul style={{ padding: 0 }}>
-                {this.state.planets.map(planet => <li className='list'>{planet.name}</li>)}
+                {
+                    this.state.isLoading ? <Loading /> : this.state.planets.map(planet => <li className='list'>{planet.name}</li>)
+                }
             </ul>
         )
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from './Loading';
 
 class Characters extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class Characters extends React.Component {
 
         var response = await fetch(url);
         var data = await response.json();
-        
+
         console.log(data)
         this.setState({
             characters: [...this.state.characters, ...data.results],
@@ -28,7 +29,9 @@ class Characters extends React.Component {
     render() {
         return (
             <ul style={{ padding: 0 }}>
-                {this.state.characters.map(character => <li className='list' >{character.name}</li>)}
+                {
+                    this.state.isLoading ? <Loading /> : this.state.characters.map(character => <li className='list' >{character.name}</li>)
+                }
             </ul>
         )
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from './Loading';
 
 class Films extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class Films extends React.Component {
     render() {
         return (
             <ul style={{ padding: 0 }}>
-                {this.state.films.map(film => <li className='list' key={film.episode_id}>{film.title}</li>)}
+                {
+                    this.state.isLoading ? <Loading /> : this.state.films.map(film => <li className='list' key={film.episode_id}>{film.title}</li>)
+                }
             </ul>
         )
     }
